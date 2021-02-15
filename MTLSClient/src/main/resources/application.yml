@@ -7,14 +7,15 @@ server:
   ssl:
     enabled: true
     client-auth: need
-    key-store: classpath:MTLSClient.jks
-    key-store-password: client
-    key-alias: MTLSClient
+    key-store: classpath:client.jks
+    key-store-password: clientpassword
+    key-alias: client
     key-store-type: JKS
     key-store-provider: SUN
-    trust-store: classpath:MTLSClient.jks
-    trust-store-password: client
+    trust-store: classpath:client.jks
+    trust-store-password: clientpassword
     trust-store-type: JKS
 ---
 endpoint:
   mtls-service: https://localhost:9002/api/name/{name}
+  description: Sanvi Aarna
