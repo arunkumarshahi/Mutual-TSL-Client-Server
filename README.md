@@ -1,6 +1,6 @@
 # Mutual-TSL-Client-Server
 
-# ============ client side application prepardness ======
+# ==== client side application prepardness ===
 ## Keystore for client 
 ### keytool -genkeypair -alias client -keyalg RSA -keysize 2048 -storetype JKS -keystore client.jks -validity 3650 -ext SAN=dns:localhost,ip:127.0.0.1 
 ### password for client store :: clientpassword
@@ -14,7 +14,7 @@
 ### keytool -import -alias server -file server.crt -keystore client.jks
 ### pass : clientpassword
 
-# ========== server side application prepardness =============
+# === server side application prepardness ====
 ## Keystore for client 
 ### keytool -genkeypair -alias server -keyalg RSA -keysize 2048 -storetype JKS -keystore server.jks -validity 3650 -ext SAN=dns:localhost,ip:127.0.0.1
 ### password for server store : serverpassword
@@ -29,7 +29,7 @@
 ### password of server jks store : serverpassword
 
 
-# ================ To invoke client from browser certificate ============
+# === To invoke client from browser certificate ===
 
 ## Add truted certificate of sever pk12 into browser to eastablish trust between browser and client application
 
