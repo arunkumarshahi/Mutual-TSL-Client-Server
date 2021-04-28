@@ -1,6 +1,6 @@
 ### Mutual-TSL-Client-Server
 
-# ==== client side application prepardness ===
+# ==== client side application preparedness ===
 ## Keystore for client 
 ``` keytool -genkeypair -alias client -keyalg RSA -keysize 2048 -storetype JKS -keystore client.jks -validity 3650 -ext SAN=dns:localhost,ip:127.0.0.1 ```
 ### password for client store :: clientpassword
@@ -10,18 +10,19 @@
 ### Create public certificate for client 
 ``` keytool -export -alias client -file client.crt -keystore client.jks ```
 
-## Import Server Cert to client jks File:
-``` keytool -import -alias server -file server.crt -keystore client.jks ```
-### pass : clientpassword
-
 # === server side application prepardness ====
-## Keystore for client 
+## Keystore for server 
 ``` keytool -genkeypair -alias server -keyalg RSA -keysize 2048 -storetype JKS -keystore server.jks -validity 3650 -ext SAN=dns:localhost,ip:127.0.0.1 ```
 ### password for server store : serverpassword
 
 
 ## public certificate for server 
 ``` keytool -export -alias server -file server.crt -keystore server.jks ```
+
+# == certificate exchange between client jks and server jks ===
+## Import Server Cert to client jks File:
+``` keytool -import -alias server -file server.crt -keystore client.jks ```
+### pass : clientpassword
 
 
 ## Import Client Cert to server jks File:
